@@ -20,4 +20,7 @@
         <property name="prefix" value="WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+
+    <import resource="WEB-INF/resource/dao.xml"/>
+    <import resource="WEB-INF/resource/service.xml"/>
 </beans>
