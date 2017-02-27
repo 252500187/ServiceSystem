@@ -10,5 +10,4 @@
               <property name="password" value="snow"/>
        </bean>
 
-       <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource"></bean>
 </beans>
