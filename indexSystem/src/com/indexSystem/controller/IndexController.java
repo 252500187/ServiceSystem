@@ -13,7 +13,6 @@ public class IndexController {
 
     @RequestMapping(value = "/in", method = RequestMethod.GET)
     public String index(){
-        System.out.print(1);
         return "index";
     }
 }
