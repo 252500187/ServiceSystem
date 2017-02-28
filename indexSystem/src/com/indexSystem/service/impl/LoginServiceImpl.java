@@ -16,7 +16,7 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private static UserDao userDao;
 
-    public boolean login(String userName, String password) {
+    public boolean isLogin(String userName, String password) {
         UserInfo userInfo = userDao.getUserInfo(userName);
         if (password.equals(userInfo.getPassword())) {
             return true;

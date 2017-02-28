@@ -1,10 +1,14 @@
 package com.indexSystem.controller;
 
 import com.indexSystem.service.LoginService;
+import com.indexSystem.system.Dict.LOGIN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Noce_ on 2017/2/26.
@@ -16,12 +20,23 @@ public class IndexController {
     @Autowired
     private static LoginService loginService;
 
-    @RequestMapping(value = "/in", method = RequestMethod.GET)
-    public String index(){
-        if(loginService.login("a","b")){
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
+    public String welcome(){
+        return "welcome";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(HttpSession session, @RequestAttribute("userName") String userName, @RequestAttribute("password") String password){
+        if(loginService.isLogin(userName, password)){
+            session.setAttribute(LOGIN.SESSION_USERNAME , userName);
             return "index";
         }
-        return "aa";
+        return "welcome";
+    }
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(){
+        return "index";
     }
 
     public static LoginService getLoginService() {

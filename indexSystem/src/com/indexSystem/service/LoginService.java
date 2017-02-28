@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
  */
 public interface LoginService {
 
-    public boolean login(String userName, String password);
+    public boolean isLogin(String userName, String password);
 }
