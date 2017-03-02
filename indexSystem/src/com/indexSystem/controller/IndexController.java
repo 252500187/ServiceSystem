@@ -4,9 +4,9 @@ import com.indexSystem.service.LoginService;
 import com.indexSystem.system.Dict.LOGIN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,7 +26,7 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(HttpSession session, @RequestAttribute("userName") String userName, @RequestAttribute("password") String password){
+    public String login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password){
         if(loginService.isLogin(userName, password)){
             session.setAttribute(LOGIN.SESSION_USERNAME , userName);
             return "index";

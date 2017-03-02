@@ -11,6 +11,10 @@
     <title>welcome</title>
 </head>
 <body>
-
+  <form method="post" action="/login.action">
+    <input type="text" name="userName" id="userName">
+    <input type="text" name="password" id="password">
+    <input type="submit" value="login">
+  </form>
 </body>
 </html>
