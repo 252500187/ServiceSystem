@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>welcome</title>
+    <%@ include file="/WEB-INF/jsp/common/header.jsp"%>
 </head>
 <body>
   <form method="post" action="/login.action">

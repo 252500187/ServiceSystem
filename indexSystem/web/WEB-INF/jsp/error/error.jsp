@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>error</title>
+    <%@ include file="/WEB-INF/jsp/common/header.jsp"%>
 </head>
 <body>
 </body>
