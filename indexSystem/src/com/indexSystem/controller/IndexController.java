@@ -23,26 +23,26 @@ public class IndexController {
     private static LoginService loginService;
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
-    public String welcome(){
+    public String welcome() {
         return "index/welcome";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password){
-        if(true || loginService.isLogin(userName, password)){
-            session.setAttribute(LOGIN.SESSION_USERNAME , userName);
+    public String login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password) {
+        if (true || loginService.isLogin(userName, password)) {
+            session.setAttribute(LOGIN.SESSION_USERNAME, userName);
             return "index/index";
         }
         return "index/welcome";
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index(){
+    public String index() {
         return "index/index";
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
         session.removeAttribute(LOGIN.SESSION_USERNAME);
         return "index/welcome";
     }
