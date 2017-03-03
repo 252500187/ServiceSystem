@@ -6,4 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<script type="text/javascript" src="/js/jquery-3.1.1.min.js" />
+<meta charset="utf-8" />
+<link href="/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/css/bootstrap/js/bootstrap.min.js"></script>

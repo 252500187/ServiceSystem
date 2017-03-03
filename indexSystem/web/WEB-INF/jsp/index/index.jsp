@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>error</title>
-    <%@ include file="/WEB-INF/jsp/common/header.jsp"%>
-</head>
-<body>
-</body>
+  <head>
+    <title>index</title>
+    <%@ include file="/WEB-INF/jsp/index/common/header.jsp"%>
+  </head>
+  <body>
+  </body>
 </html>
