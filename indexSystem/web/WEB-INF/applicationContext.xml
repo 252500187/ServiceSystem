@@ -35,6 +35,15 @@
         </property>
     </bean>
 
-    <import resource="resource/dao.xml"/>
-    <import resource="resource/service.xml"/>
+    <bean id="propertyConfigurerFull" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="localOverride" value="true"></property>
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/properties/system.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <import resource="xmlConfig/dao.xml"/>
+    <import resource="xmlConfig/service.xml"/>
 </beans>

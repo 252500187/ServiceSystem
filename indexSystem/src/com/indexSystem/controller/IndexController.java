@@ -29,7 +29,7 @@ public class IndexController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password) {
-        if (true || loginService.isLogin(userName, password)) {
+        if (loginService.isLogin(userName, password)) {
             session.setAttribute(LOGIN.SESSION_USERNAME, userName);
             return "index/index";
         }
