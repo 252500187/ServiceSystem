@@ -12,5 +12,6 @@
     <%@ include file="/WEB-INF/jsp/index/common/header.jsp"%>
   </head>
   <body>
+  index
   </body>
 </html>

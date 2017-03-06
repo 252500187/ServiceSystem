@@ -18,7 +18,7 @@ public class LoginServiceImpl implements LoginService {
 
     public boolean isLogin(String userName, String password) {
         UserInfo userInfo = userDao.getUserInfo(userName);
-        if (password.equals(userInfo.getPassword())) {
+        if (userInfo != null && password.equals(userInfo.getPassword())) {
             return true;
         }
         return false;
