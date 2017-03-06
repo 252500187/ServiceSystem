@@ -1,11 +1,13 @@
 package com.indexSystem.service.impl;
 
 import com.indexSystem.dao.UserDao;
-import com.indexSystem.dao.impl.UserDaoImpl;
-import com.indexSystem.vo.UserInfo;
+import com.indexSystem.system.Dict.Dict;
+import com.indexSystem.vo.UserInfoVO;
 import com.indexSystem.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by lijunbo on 2017/2/27.
@@ -16,9 +18,11 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private static UserDao userDao;
 
-    public boolean isLogin(String userName, String password) {
-        UserInfo userInfo = userDao.getUserInfo(userName);
-        if (userInfo != null && password.equals(userInfo.getPassword())) {
+    public boolean isLogin(HttpSession session, String userName, String password) {
+        UserInfoVO userInfoVO = userDao.getUserInfo(userName, Dict.USE_STATE);
+        if (userInfoVO != null && password.equals(userInfoVO.getPassword())) {
+            session.setAttribute(Dict.SESSION_USERNAME, userInfoVO.getUserName());
+            session.setAttribute(Dict.SESSION_USER_ID, userInfoVO.getId());
             return true;
         }
         return false;

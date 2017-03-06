@@ -1,8 +1,8 @@
 package com.indexSystem.controller;
 
 import com.indexSystem.service.LoginService;
-import com.indexSystem.system.Dict.LOGIN;
-import com.indexSystem.vo.UserInfo;
+import com.indexSystem.system.Dict.Dict;
+import com.indexSystem.vo.UserInfoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     @Autowired
-    private static LoginService loginService;
+    private LoginService loginService;
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public String welcome() {
@@ -29,8 +29,7 @@ public class IndexController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password) {
-        if (loginService.isLogin(userName, password)) {
-            session.setAttribute(LOGIN.SESSION_USERNAME, userName);
+        if (loginService.isLogin(session, userName, password)) {
             return "index/index";
         }
         return "index/welcome";
@@ -43,23 +42,20 @@ public class IndexController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpSession session) {
-        session.removeAttribute(LOGIN.SESSION_USERNAME);
+        session.removeAttribute(Dict.SESSION_USERNAME);
+        session.removeAttribute(Dict.SESSION_USER_ID);
         return "index/welcome";
     }
 
     @RequestMapping(value = "/ajax", method = RequestMethod.POST)
     @ResponseBody
-    public UserInfo ajax() {
-        UserInfo userInfo = new UserInfo();
-        userInfo.setUserName("込込");
-        return userInfo;
+    public UserInfoVO ajax() {
+        UserInfoVO userInfoVO = new UserInfoVO();
+        userInfoVO.setUserName("込込");
+        return userInfoVO;
     }
 
-    public static LoginService getLoginService() {
-        return loginService;
-    }
-
-    public static void setLoginService(LoginService loginService) {
-        IndexController.loginService = loginService;
+    public void setLoginService(LoginService loginService) {
+        this.loginService = loginService;
     }
 }

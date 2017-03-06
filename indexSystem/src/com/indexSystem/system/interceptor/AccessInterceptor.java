@@ -1,7 +1,7 @@
 package com.indexSystem.system.interceptor;
 
 import com.indexSystem.service.LoginService;
-import com.indexSystem.system.Dict.LOGIN;
+import com.indexSystem.system.Dict.Dict;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -23,7 +23,7 @@ public class AccessInterceptor implements HandlerInterceptor {
         if ("login.action".equals(uri) || "welcome.action".equals(uri)) {
             return true;
         }
-        if (StringUtils.isEmpty(session.getAttribute(LOGIN.SESSION_USERNAME))) {
+        if (StringUtils.isEmpty(session.getAttribute(Dict.SESSION_USERNAME))) {
             return false;
         }
         return true;

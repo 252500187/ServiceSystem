@@ -1,6 +1,6 @@
 package com.indexSystem.dao;
 
-import com.indexSystem.vo.UserInfo;
+import com.indexSystem.vo.UserInfoVO;
 
 /**
  * Created by lijunbo on 2017/2/27.
@@ -8,5 +8,5 @@ import com.indexSystem.vo.UserInfo;
 
 public interface UserDao {
 
-    public UserInfo getUserInfo(String userName);
+    public UserInfoVO getUserInfo(String userName, int state);
 }
