@@ -33,7 +33,7 @@ public class AccessInterceptor implements HandlerInterceptor {
         String uri = httpServletRequest.getRequestURI().substring(httpServletRequest.getRequestURI().lastIndexOf("/") + 1);
         if (!isAuthorized(uri, httpServletRequest.getSession())) {
             httpServletRequest.getRequestDispatcher("/toLogin").forward(httpServletRequest, httpServletResponse);
-//            httpServletResponse.sendRedirect("/welcome");
+//            httpServletResponse.sendRedirect("/toLogin");
             return false;
         }
         return true;

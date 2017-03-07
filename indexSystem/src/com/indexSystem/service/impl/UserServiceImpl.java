@@ -28,9 +28,9 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    public boolean changePassword(int id, String password) {
+    public boolean changePassword(int id, String newPassword, String oldPassword) {
         try {
-            userDao.changePassword(id, password);
+            userDao.changePassword(id, newPassword, oldPassword);
         } catch (Exception e) {
             return false;
         }

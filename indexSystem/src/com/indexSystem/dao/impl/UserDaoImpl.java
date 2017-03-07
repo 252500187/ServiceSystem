@@ -17,7 +17,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
                 new BeanPropertyRowMapper<UserInfoVO>(UserInfoVO.class), userName);
     }
 
-    public void changePassword(int id, String password) {
-        jdbcTemplate.update("UPDATE user_info SET password=? WHERE id=?", id, password);
+    public void changePassword(int id, String newPassword, String oldPassword) {
+        jdbcTemplate.update("UPDATE user_info SET password=? WHERE id=? AND password=?", id, newPassword, oldPassword);
     }
 }

@@ -1,7 +1,5 @@
 package com.indexSystem.service;
 
-import org.springframework.stereotype.Service;
-
 import javax.servlet.http.HttpSession;
 
 /**
@@ -11,5 +9,5 @@ public interface UserService {
 
     public boolean isLogin(HttpSession session, String userName, String password);
 
-    public boolean changePassword(int id, String password);
+    public boolean changePassword(int id, String newPassword, String oldPassword);
 }
