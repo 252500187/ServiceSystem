@@ -21,7 +21,7 @@ public class LoginServiceImpl implements LoginService {
     public boolean isLogin(HttpSession session, String userName, String password) {
         UserInfoVO userInfoVO = userDao.getOnUseUserInfo(userName);
         if (userInfoVO != null && password.equals(userInfoVO.getPassword())) {
-            session.setAttribute(Dict.SESSION_USERNAME, userInfoVO.getUserName());
+            session.setAttribute(Dict.SESSION_USERNAME, userName);
             session.setAttribute(Dict.SESSION_USER_ID, userInfoVO.getId());
             return true;
         }

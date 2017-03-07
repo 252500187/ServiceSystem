@@ -20,10 +20,10 @@ public class AccessInterceptor implements HandlerInterceptor {
     LoginService loginService;
 
     private boolean isAuthorized(String uri, HttpSession session) {
-        if ("login.action".equals(uri) || "welcome.action".equals(uri)) {
+        if ("login".equals(uri) || "welcome".equals(uri)) {
             return true;
         }
-        if (StringUtils.isEmpty(session.getAttribute(Dict.SESSION_USERNAME))) {
+        if (StringUtils.isEmpty(session.getAttribute(Dict.SESSION_USER_ID))) {
             return false;
         }
         return true;
@@ -32,7 +32,7 @@ public class AccessInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         String uri = httpServletRequest.getRequestURI().substring(httpServletRequest.getRequestURI().lastIndexOf("/") + 1);
         if (!isAuthorized(uri, httpServletRequest.getSession())) {
-            httpServletResponse.sendRedirect("/welcome.action");
+            httpServletResponse.sendRedirect("/welcome");
             return false;
         }
         return true;

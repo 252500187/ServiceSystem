@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 /**
  * Created by Noce_ on 2017/2/26.
@@ -23,19 +26,22 @@ public class IndexController {
     private LoginService loginService;
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
-    public String welcome() {
+    public String welcome(HttpSession session) {
+        session.removeAttribute(Dict.SESSION_USERNAME);
+        session.removeAttribute(Dict.SESSION_USER_ID);
         return "index/welcome";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password) {
+    public String login(HttpSession session,
+                        @RequestParam("userName") String userName, @RequestParam("password") String password) {
         if (loginService.isLogin(session, userName, password)) {
             return "index/index";
         }
         return "index/welcome";
     }
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public String index() {
         return "index/index";
     }
