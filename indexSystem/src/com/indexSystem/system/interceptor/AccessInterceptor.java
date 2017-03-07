@@ -32,7 +32,7 @@ public class AccessInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         String uri = httpServletRequest.getRequestURI().substring(httpServletRequest.getRequestURI().lastIndexOf("/") + 1);
         if (!isAuthorized(uri, httpServletRequest.getSession())) {
-            httpServletRequest.getRequestDispatcher("/welcome").forward(httpServletRequest, httpServletResponse);
+            httpServletRequest.getRequestDispatcher("/toLogin").forward(httpServletRequest, httpServletResponse);
 //            httpServletResponse.sendRedirect("/welcome");
             return false;
         }

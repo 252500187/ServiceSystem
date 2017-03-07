@@ -10,7 +10,7 @@
 <head>
     <title>登陆</title>
     <%@ include file="/WEB-INF/jsp/common/header.jsp" %>
-    <link href="/static/css/welcome.css" rel="stylesheet">
+    <link href="/static/css/login.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
