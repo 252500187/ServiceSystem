@@ -16,4 +16,8 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return jdbcTemplate.queryForObject("SELECT id, password FROM user_info WHERE user_name = ? AND state = 1",
                 new BeanPropertyRowMapper<UserInfoVO>(UserInfoVO.class), userName);
     }
+
+    public void changePassword(int id, String password) {
+        jdbcTemplate.update("UPDATE user_info SET password=? WHERE id=?", id, password);
+    }
 }

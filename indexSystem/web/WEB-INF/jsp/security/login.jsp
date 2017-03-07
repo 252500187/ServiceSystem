@@ -8,44 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>welcome</title>
-    <%@ include file="/WEB-INF/jsp/index/common/header.jsp" %>
-    <style type="text/css">
-        body {
-            background: url(/static/img/background.jpg) no-repeat;
-            font-size: 16px;
-        }
-
-        .form {
-            background: rgba(255, 255, 255, 0.2);
-            width: 400px;
-            margin: 100px auto;
-        }
-
-        #login_form {
-            display: block;
-        }
-
-        #register_form {
-            display: none;
-        }
-
-        .fa {
-            display: inline-block;
-            top: 27px;
-            left: 6px;
-            position: relative;
-            color: #ccc;
-        }
-
-        input[type="text"], input[type="password"] {
-            padding-left: 26px;
-        }
-
-        .checkbox {
-            padding-left: 21px;
-        }
-    </style>
+    <title>登陆</title>
+    <%@ include file="/WEB-INF/jsp/common/header.jsp" %>
+    <link href="/static/css/welcome.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">

@@ -1,6 +1,6 @@
 package com.indexSystem.system.interceptor;
 
-import com.indexSystem.service.LoginService;
+import com.indexSystem.service.UserService;
 import com.indexSystem.system.Dict.Dict;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -17,10 +17,10 @@ import javax.servlet.http.HttpSession;
 public class AccessInterceptor implements HandlerInterceptor {
 
     @Autowired
-    LoginService loginService;
+    UserService loginService;
 
     private boolean isAuthorized(String uri, HttpSession session) {
-        if ("login".equals(uri) || "welcome".equals(uri)) {
+        if ("toLogin".equals(uri) || "login".equals(uri)) {
             return true;
         }
         if (StringUtils.isEmpty(session.getAttribute(Dict.SESSION_USER_ID))) {

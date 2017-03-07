@@ -9,4 +9,6 @@ import com.indexSystem.vo.UserInfoVO;
 public interface UserDao {
 
     public UserInfoVO getOnUseUserInfo(String userName);
+
+    public void changePassword(int id, String password);
 }

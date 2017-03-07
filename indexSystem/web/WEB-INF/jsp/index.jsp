@@ -8,13 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>index</title>
-    <%@ include file="/WEB-INF/jsp/index/common/header.jsp" %>
-    <style type="text/css">
-        body {
-            padding: 20px
-        }
-    </style>
+    <title>首页</title>
+    <%@ include file="/WEB-INF/jsp/common/header.jsp" %>
+    <link href="/static/css/index.css" rel="stylesheet">
 </head>
 <body>
 <div class="row">
@@ -45,24 +41,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="bs-example" data-example-id="simple-nav-stacked">
-                            <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-                                <li role="presentation" class="active"><a href="#"><span
-                                        class="glyphicon glyphicon-asterisk"></span> Home</a></li>
-                                <li role="presentation"><a href="#"><span class="glyphicon glyphicon-asterisk"></span>
-                                    Profile</a></li>
-                                <li role="presentation"><a href="#"><span class="glyphicon glyphicon-asterisk"></span>
-                                    Messages</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <%@ include file="/WEB-INF/jsp/common/nav.jsp" %>
     </div>
 </div>
 </body>
