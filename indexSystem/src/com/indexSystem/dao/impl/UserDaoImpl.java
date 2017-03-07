@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository("userDao")
 public class UserDaoImpl extends BaseDao implements UserDao {
 
-    public UserInfoVO getUserInfo(String userName, int state) {
-        return jdbcTemplate.queryForObject("SELECT id, password FROM user_info WHERE user_name = ? AND state = ?",
-                new BeanPropertyRowMapper<UserInfoVO>(UserInfoVO.class), userName, state);
+    public UserInfoVO getOnUseUserInfo(String userName) {
+        return jdbcTemplate.queryForObject("SELECT id, password FROM user_info WHERE user_name = ? AND state = 1",
+                new BeanPropertyRowMapper<UserInfoVO>(UserInfoVO.class), userName);
     }
 }

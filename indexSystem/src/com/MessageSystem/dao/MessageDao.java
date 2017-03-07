@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface MessageDao {
 
-    public List<MessageVO> getMessageList(int start, int end, int state);
+    public List<MessageVO> getShowMessageList(int start, int length);
 }

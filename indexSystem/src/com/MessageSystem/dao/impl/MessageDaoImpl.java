@@ -5,7 +5,6 @@ import com.MessageSystem.vo.MessageVO;
 import com.indexSystem.dao.base.BaseDao;
 import org.springframework.stereotype.Repository;
 
-import java.lang.annotation.ElementType;
 import java.util.List;
 
 /**
@@ -14,7 +13,7 @@ import java.util.List;
 @Repository("messageDao")
 public class MessageDaoImpl extends BaseDao implements MessageDao {
 
-    public List<MessageVO> getMessageList(int start, int end, int state) {
-        return jdbcTemplate.queryForList("", MessageVO.class, start, end, state);
+    public List<MessageVO> getShowMessageList(int start, int length) {
+        return jdbcTemplate.queryForList("SELECT * FROM message_list_info LIMIT ?,?", MessageVO.class, start, length);
     }
 }

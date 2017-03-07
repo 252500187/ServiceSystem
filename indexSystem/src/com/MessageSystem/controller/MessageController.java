@@ -22,8 +22,8 @@ public class MessageController {
     private MessageService messageService;
 
     @RequestMapping(value = "/getMsa", method = RequestMethod.POST)
-    public List<MessageVO> getMessageList(@RequestParam("sta") int start, @RequestParam("end") int end) {
-        return messageService.getMessageList(start, end);
+    public List<MessageVO> getMessageList(@RequestParam("sta") int start, @RequestParam("len") int length) {
+        return messageService.getShowMessageList(start, length);
     }
 
     public void setMessageService(MessageService messageService) {

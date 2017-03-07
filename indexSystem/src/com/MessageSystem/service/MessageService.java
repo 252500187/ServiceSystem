@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface MessageService {
 
-    public List<MessageVO> getMessageList(int start, int end);
+    public List<MessageVO> getShowMessageList(int start, int length);
 }

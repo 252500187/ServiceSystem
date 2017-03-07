@@ -18,8 +18,8 @@ public class MessageServiceImpl implements MessageService {
     @Autowired
     private MessageDao messageDao;
 
-    public List<MessageVO> getMessageList(int start, int end) {
-        return messageDao.getMessageList(start, end, Dict.USE_STATE);
+    public List<MessageVO> getShowMessageList(int start, int length) {
+        return messageDao.getShowMessageList(start, length);
     }
 
     public void setMessageDao(MessageDao messageDao) {

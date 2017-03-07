@@ -8,5 +8,5 @@ import com.indexSystem.vo.UserInfoVO;
 
 public interface UserDao {
 
-    public UserInfoVO getUserInfo(String userName, int state);
+    public UserInfoVO getOnUseUserInfo(String userName);
 }
