@@ -18,31 +18,8 @@
 </head>
 <body>
 <div class="row">
-    <div class="col-md-10">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
-                    </div>
-                    <div class="panel-body">
-                        ..................
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
-                    </div>
-                    <div class="panel-body">
-                        ..................
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="col-md-9">
+        <div class="row" id="msaList"></div>
         <div class="row">
             <div class="col-md-8 col-md-offset-3">
                 <nav aria-label="Page navigation">
@@ -67,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
