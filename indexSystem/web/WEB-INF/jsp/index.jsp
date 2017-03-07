@@ -13,8 +13,17 @@
     <link href="/static/css/index.css" rel="stylesheet">
 </head>
 <body>
+<%@ include file="/WEB-INF/jsp/common/head.jsp" %>
 <div class="row">
     <div class="col-md-9">
+        <div class="row">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="sizing-addon1">新</span>
+                <input type="text" class="form-control" placeholder="新内容..." aria-describedby="sizing-addon1">
+                <span class="input-group-btn"><button class="btn btn-default" type="button">发送</button></span>
+            </div>
+            <hr/>
+        </div>
         <div class="row" id="msaList"></div>
         <div class="row">
             <div class="col-md-8 col-md-offset-3">
