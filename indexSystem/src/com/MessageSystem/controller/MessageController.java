@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -20,8 +21,9 @@ public class MessageController {
     @Autowired
     private MessageService messageService;
 
-    @RequestMapping(value = "/getMsa", method = RequestMethod.POST)
-    public List<MessageVO> getMessageList(@RequestParam("sta") int start, @RequestParam("len") int length) {
+    @RequestMapping(value = "/showMsa", method = RequestMethod.POST)
+    @ResponseBody
+    public List<MessageVO> getSMessageList(@RequestParam("sta") int start, @RequestParam("len") int length) {
         return messageService.getShowMessageList(start, length);
     }
 

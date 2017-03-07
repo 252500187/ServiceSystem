@@ -7,7 +7,7 @@ import java.security.Timestamp;
  */
 public class MessageVO {
 
-    private long time;
+    private String time;
 
     private String content;
 
@@ -34,12 +34,12 @@ public class MessageVO {
         this.state = state;
     }
 
-    public long getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(long time) {
-        this.time = time;
+    public void setTime(String time) {
+        this.time = time.substring(0, 19);
     }
 
     public String getUserId() {

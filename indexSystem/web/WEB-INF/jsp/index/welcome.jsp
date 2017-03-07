@@ -81,14 +81,3 @@
 </div>
 </body>
 </html>
-<script type="text/javascript">
-    //    $.ajax({
-    //        url: "/login.action",
-    //        type: "post",
-    //        dataType: "json",
-    //        data: "userName=呵呵&password=2",
-    //        success: function () {
-    //            alert(1);
-    //        }
-    //    });
-</script>

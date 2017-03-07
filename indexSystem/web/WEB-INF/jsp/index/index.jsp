@@ -90,3 +90,4 @@
 </div>
 </body>
 </html>
+<script src="/static/js/index.js"></script>
