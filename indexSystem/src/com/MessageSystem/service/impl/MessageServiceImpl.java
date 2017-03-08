@@ -25,12 +25,12 @@ public class MessageServiceImpl implements MessageService {
 
     public boolean sendMessage(HttpSession session, String content) {
         try {
-            messageDao.sendMessage((String) session.getAttribute(Dict.SESSION_USER_ID), content);
+            messageDao.sendMessage(session.getAttribute(Dict.SESSION_USER_ID).toString(), content);
         } catch (Exception e) {
             return false;
         }
         return true;
-    }
+}
 
     public void setMessageDao(MessageDao messageDao) {
         this.messageDao = messageDao;

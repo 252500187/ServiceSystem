@@ -9,5 +9,5 @@ public interface UserService {
 
     public boolean isLogin(HttpSession session, String userName, String password);
 
-    public boolean changePassword(int id, String newPassword, String oldPassword);
+    public boolean changePassword(String id, String newPassword, String oldPassword);
 }

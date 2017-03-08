@@ -17,28 +17,28 @@
 <div class="row">
     <div class="col-md-9">
         <div class="row">
-            <div class="col-md-3 col-md-offset-4">
+            <div class="col-md-6 col-md-offset-4">
                 <div class="form-horizontal">
                     <div class="form-group">
-                        <label for="oldPass" class="col-sm-4 control-label">旧密码</label>
-                        <div class="col-sm-8">
+                        <label for="oldPass" class="col-sm-6 control-label">旧密码</label>
+                        <div class="col-sm-6">
                             <input type="password" class="form-control" id="oldPass" placeholder="旧密码">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="newPass" class="col-sm-4 control-label">新设密码</label>
-                        <div class="col-sm-8">
+                        <label for="newPass" class="col-sm-6 control-label">新设密码</label>
+                        <div class="col-sm-6">
                             <input type="password" class="form-control" id="newPass" placeholder="新设密码">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="newPassAgain" class="col-sm-4 control-label">再次输入</label>
-                        <div class="col-sm-8">
+                        <label for="newPassAgain" class="col-sm-6 control-label">再次输入</label>
+                        <div class="col-sm-6">
                             <input type="password" class="form-control" id="newPassAgain" placeholder="再次输入">
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
+                        <div class="col-sm-offset-6 col-sm-6">
                             <button type="button" class="btn btn-default" id="chanPass">确认修改</button>
                         </div>
                     </div>

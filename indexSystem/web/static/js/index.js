@@ -16,7 +16,7 @@ $.ajax({
 $("#sendNew").click(function () {
     var content = $("#content").val();
     if (content.trim() == "") {
-        alert("ÄÚÈİÎª¿Õ");
+        alert("å†…å®¹ä¸ºç©º");
         return;
     }
     $.ajax({
@@ -26,9 +26,9 @@ $("#sendNew").click(function () {
         data: {content : content},
         success: function (result) {
             if (result) {
-                alert("·¢ËÍ³É¹¦");
+                $("#content").val("å‘é€æˆåŠŸ...");
             } else {
-                alert("·¢ËÍÊ§°Ü");
+                alert("å‘é€å¤±è´¥");
             }
         }
     });

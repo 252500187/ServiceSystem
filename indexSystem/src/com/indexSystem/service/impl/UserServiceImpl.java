@@ -2,6 +2,7 @@ package com.indexSystem.service.impl;
 
 import com.indexSystem.dao.UserDao;
 import com.indexSystem.system.Dict.Dict;
+import com.indexSystem.system.Utils;
 import com.indexSystem.vo.UserInfoVO;
 import com.indexSystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     public boolean isLogin(HttpSession session, String userName, String password) {
         UserInfoVO userInfoVO = userDao.getOnUseUserInfo(userName);
-        if (userInfoVO != null && password.equals(userInfoVO.getPassword())) {
+        if (userInfoVO != null && Utils.getMD5(password).equals(userInfoVO.getPassword())) {
             session.setAttribute(Dict.SESSION_USERNAME, userName);
             session.setAttribute(Dict.SESSION_USER_ID, userInfoVO.getId());
             return true;
@@ -28,13 +29,14 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    public boolean changePassword(int id, String newPassword, String oldPassword) {
+    public boolean changePassword(String id, String newPassword, String oldPassword) {
         try {
-            userDao.changePassword(id, newPassword, oldPassword);
+            if (userDao.changePassword(id, newPassword, oldPassword) > 0) {
+                return true;
+            }
         } catch (Exception e) {
-            return false;
         }
-        return true;
+        return false;
     }
 
     public static UserDao getUserDao() {

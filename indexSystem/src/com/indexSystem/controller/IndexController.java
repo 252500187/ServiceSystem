@@ -53,9 +53,8 @@ public class IndexController {
 
     @RequestMapping(value = "/chanPass", method = RequestMethod.POST)
     @ResponseBody
-    public boolean changePassword(HttpSession session, @RequestAttribute("npsd") String oldPassword, @RequestAttribute("opsd") String newPassword) {
-        int id = Integer.parseInt((String) session.getAttribute(Dict.SESSION_USER_ID));
-        if (userService.changePassword(id, newPassword, oldPassword)) {
+    public boolean changePassword(HttpSession session, @RequestParam("npsd") String newPassword, @RequestParam("opsd") String oldPassword) {
+        if (userService.changePassword(session.getAttribute(Dict.SESSION_USER_ID).toString(), newPassword, oldPassword)) {
             return true;
         }
         return false;
