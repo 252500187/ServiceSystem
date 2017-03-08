@@ -13,6 +13,7 @@
                 <div class="bs-example" data-example-id="simple-nav-stacked">
                     <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
                         <li role="presentation" id="index"><a href="/"><span class="glyphicon glyphicon-asterisk"></span> 首页</a></li>
+                        <%--TODO <li role="presentation" id="index"><a href="/"><span class="glyphicon glyphicon-asterisk"></span> 我的留言</a></li>--%>
                         <li role="presentation" id="change"><a href="/toChanPass"><span class="glyphicon glyphicon-asterisk"></span> 修改密码</a></li>
                         <li role="presentation"><a href="/logout"><span class="glyphicon glyphicon-asterisk"></span> 退出</a></li>
                     </ul>
