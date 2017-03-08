@@ -14,7 +14,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/jsp/common/head.jsp" %>
-<div class="row">
+<div class="row" id="pageContent">
     <div class="col-md-9">
         <div class="row">
             <div class="col-md-6 col-md-offset-4">

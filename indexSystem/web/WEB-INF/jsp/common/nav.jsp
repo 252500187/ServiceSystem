@@ -12,10 +12,14 @@
             <div class="panel-body">
                 <div class="bs-example" data-example-id="simple-nav-stacked">
                     <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-                        <li role="presentation" id="index"><a href="/"><span class="glyphicon glyphicon-asterisk"></span> 首页</a></li>
-                        <%--TODO <li role="presentation" id="index"><a href="/"><span class="glyphicon glyphicon-asterisk"></span> 我的留言</a></li>--%>
-                        <li role="presentation" id="change"><a href="/toChanPass"><span class="glyphicon glyphicon-asterisk"></span> 修改密码</a></li>
-                        <li role="presentation"><a href="/logout"><span class="glyphicon glyphicon-asterisk"></span> 退出</a></li>
+                        <li role="presentation" id="index"><a href="/"><span
+                                class="glyphicon glyphicon-asterisk"></span> 首页</a></li>
+                        <li role="presentation" id="myMsa"><a href="/toMyMsa"><span
+                                class="glyphicon glyphicon-asterisk"></span> 我的留言</a></li>
+                        <li role="presentation" id="change"><a href="/toChanPass"><span
+                                class="glyphicon glyphicon-asterisk"></span> 修改密码</a></li>
+                        <li role="presentation"><a href="/logout"><span class="glyphicon glyphicon-asterisk"></span> 退出</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -23,8 +27,10 @@
     </div>
 </div>
 <script type="text/javascript">
-    if (document.location.pathname == "toChangePassword") {
+    if (document.location.pathname == "/toChanPass") {
         $("#change").attr("class", "active");
+    } else if (document.location.pathname == "/toMyMsa") {
+        $("#myMsa").attr("class", "active");
     } else {
         $("#index").attr("class", "active");
     }
