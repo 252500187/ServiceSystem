@@ -2,6 +2,7 @@ package com.MessageSystem.service;
 
 import com.MessageSystem.vo.MessageVO;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -10,4 +11,6 @@ import java.util.List;
 public interface MessageService {
 
     public List<MessageVO> getShowMessageList(int start, int length);
+
+    public boolean sendMessage(HttpSession session, String content);
 }

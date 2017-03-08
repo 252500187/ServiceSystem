@@ -7,6 +7,7 @@ import com.indexSystem.system.Dict.Dict;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -20,6 +21,15 @@ public class MessageServiceImpl implements MessageService {
 
     public List<MessageVO> getShowMessageList(int start, int length) {
         return messageDao.getShowMessageList(start, length);
+    }
+
+    public boolean sendMessage(HttpSession session, String content) {
+        try {
+            messageDao.sendMessage((String) session.getAttribute(Dict.SESSION_USER_ID), content);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 
     public void setMessageDao(MessageDao messageDao) {

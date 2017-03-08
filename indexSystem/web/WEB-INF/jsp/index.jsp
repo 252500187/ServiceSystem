@@ -19,8 +19,8 @@
         <div class="row">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon" id="sizing-addon1">新</span>
-                <input type="text" class="form-control" placeholder="新内容..." aria-describedby="sizing-addon1">
-                <span class="input-group-btn"><button class="btn btn-default" type="button">发送</button></span>
+                <input type="text" class="form-control" placeholder="新内容..." aria-describedby="sizing-addon1" id="content">
+                <span class="input-group-btn"><button class="btn btn-default" type="button" id="sendNew">发送</button></span>
             </div>
             <hr/>
         </div>

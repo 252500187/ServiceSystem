@@ -12,3 +12,24 @@ $.ajax({
         }
     }
 });
+
+$("#sendNew").click(function () {
+    var content = $("#content").val();
+    if (content.trim() == "") {
+        alert("内容为空");
+        return;
+    }
+    $.ajax({
+        url: "/msa/sendMsa",
+        type: "post",
+        dataType: "json",
+        data: {content : content},
+        success: function (result) {
+            if (result) {
+                alert("发送成功");
+            } else {
+                alert("发送失败");
+            }
+        }
+    });
+});

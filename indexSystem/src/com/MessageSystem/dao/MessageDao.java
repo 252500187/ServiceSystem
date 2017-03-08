@@ -2,6 +2,7 @@ package com.MessageSystem.dao;
 
 import com.MessageSystem.vo.MessageVO;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -10,4 +11,6 @@ import java.util.List;
 public interface MessageDao {
 
     public List<MessageVO> getShowMessageList(int start, int length);
+
+    public void sendMessage(String userId, String content);
 }
