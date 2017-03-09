@@ -13,4 +13,6 @@ public interface MessageDao {
     public List<MessageVO> getShowMessageList(int start, int length);
 
     public void sendMessage(String userId, String content);
+
+    public List<MessageVO> getMyMessageList(int start, int length, String userId);
 }

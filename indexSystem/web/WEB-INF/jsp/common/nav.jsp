@@ -14,7 +14,7 @@
                     <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
                         <li role="presentation" id="index"><a href="/"><span
                                 class="glyphicon glyphicon-asterisk"></span> 首页</a></li>
-                        <li role="presentation" id="myMsa"><a href="/toMyMsa"><span
+                        <li role="presentation" id="myMsa"><a href="/msa/toMyMsa"><span
                                 class="glyphicon glyphicon-asterisk"></span> 我的留言</a></li>
                         <li role="presentation" id="change"><a href="/toChanPass"><span
                                 class="glyphicon glyphicon-asterisk"></span> 修改密码</a></li>
@@ -29,7 +29,7 @@
 <script type="text/javascript">
     if (document.location.pathname == "/toChanPass") {
         $("#change").attr("class", "active");
-    } else if (document.location.pathname == "/toMyMsa") {
+    } else if (document.location.pathname == "/msa/toMyMsa") {
         $("#myMsa").attr("class", "active");
     } else {
         $("#index").attr("class", "active");

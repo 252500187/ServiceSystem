@@ -21,9 +21,13 @@ public class MessageDaoImpl implements MessageDao {
 
     public List<MessageVO> getShowMessageList(int start, int length) {
         return baseDao.getJdbcTemplate().query("SELECT * FROM message_list_info LIMIT ?,?", new BeanPropertyRowMapper<MessageVO>(MessageVO.class), start, length);
-}
+    }
 
     public void sendMessage(String userId, String content) {
         baseDao.getJdbcTemplate().update("INSERT INTO message_info(user_id,content,time) VALUES (?,?,?)", userId, content, baseDao.getDateFormat().format(new Date()));
+    }
+
+    public List<MessageVO> getMyMessageList(int start, int length, String userId) {
+        return baseDao.getJdbcTemplate().query("SELECT time, content, state FROM message_info WHERE user_id=? ORDER BY time DESC LIMIT ?,?", new BeanPropertyRowMapper<MessageVO>(MessageVO.class), userId, start, length);
     }
 }

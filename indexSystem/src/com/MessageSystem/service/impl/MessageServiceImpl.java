@@ -30,7 +30,11 @@ public class MessageServiceImpl implements MessageService {
             return false;
         }
         return true;
-}
+    }
+
+    public List<MessageVO> getMyMessageList(int start, int length, String userId) {
+        return messageDao.getMyMessageList(start, length, userId);
+    }
 
     public void setMessageDao(MessageDao messageDao) {
         this.messageDao = messageDao;

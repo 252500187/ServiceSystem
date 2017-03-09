@@ -13,4 +13,6 @@ public interface MessageService {
     public List<MessageVO> getShowMessageList(int start, int length);
 
     public boolean sendMessage(HttpSession session, String content);
+
+    public List<MessageVO> getMyMessageList(int start, int length, String userId);
 }

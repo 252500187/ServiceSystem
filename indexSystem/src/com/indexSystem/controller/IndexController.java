@@ -26,8 +26,7 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(HttpSession session,
-                        @RequestParam("userName") String userName, @RequestParam("password") String password) {
+    public String login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password) {
         if (userService.isLogin(session, userName, password)) {
             return "index";
         }
@@ -48,7 +47,7 @@ public class IndexController {
 
     @RequestMapping(value = "/toChanPass", method = RequestMethod.GET)
     public String toChangePassword() {
-        return "security/chanpass";
+        return "security/chanPass";
     }
 
     @RequestMapping(value = "/chanPass", method = RequestMethod.POST)
