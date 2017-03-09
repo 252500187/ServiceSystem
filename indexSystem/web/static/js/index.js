@@ -1,5 +1,3 @@
-var panColor = ["panel-success", "panel-danger", "panel-default", "panel-info", "panel-warning"];
-
 function getMessage(start, length) {
     $.ajax({
         url: "/msa/showMsa",
@@ -13,9 +11,10 @@ function getMessage(start, length) {
             var msaList = $("#msaList");
             msaList.empty();
             for (var i in result) {
-                msaList.append('<div class="row"><div class="col-md-12"><div class="panel ' + panColor [i % panColor.length] + '"><div class="panel-heading"><h3 class="panel-title">'
-                    + result[i].nickName + result[i].time + '</h3></div><div class="panel-body">'
-                    + result[i].content + '</div></div></div></div>');
+                msaList.append('<section class="about section"><div class="section-inner"><h2 class="heading">'
+                    + result[i].nickName + '</h2><div class="content"><p>'
+                    + result[i].content + '</p><p>'
+                    + result[i].time + '</p></div></div></section>');
             }
         }
     });

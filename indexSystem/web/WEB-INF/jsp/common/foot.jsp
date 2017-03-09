@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 </div>
-<div class="col-md-3">
+<div class="secondary col-md-3 col-sm-12 col-xs-12">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -16,9 +16,12 @@
                     <div class="bs-example" data-example-id="simple-nav-stacked">
                         <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
                             <li role="presentation" id="index"><a href="/"><i class="icon-asterisk"></i> 首页</a></li>
-                            <li role="presentation" id="myMsa"><a href="/msa/toMyMsa"><i class="icon-asterisk"></i> 我的留言</a></li>
-                            <li role="presentation" id="info"><a href="/toInfo"><i class="icon-asterisk"></i> 个人信息</a></li>
-                            <li role="presentation" id="change"><a href="/toChanPass"><i class="icon-asterisk"></i> 修改密码</a></li>
+                            <li role="presentation" id="myMsa"><a href="/msa/toMyMsa"><i class="icon-asterisk"></i> 我的留言</a>
+                            </li>
+                            <li role="presentation" id="info"><a href="/toInfo"><i class="icon-asterisk"></i> 个人信息</a>
+                            </li>
+                            <li role="presentation" id="change"><a href="/toChanPass"><i class="icon-asterisk"></i> 修改密码</a>
+                            </li>
                             <li role="presentation"><a href="/logout"><i class="icon-asterisk"></i> 退出</a></li>
                         </ul>
                     </div>
