@@ -1,3 +1,9 @@
 #pageContent {
     padding: 30px
 }
+
+#pageHead {
+    height: 40px;
+    background-color: #2e6da4;
+    box-shadow: 3px 3px 3px #a6e1ec
+}

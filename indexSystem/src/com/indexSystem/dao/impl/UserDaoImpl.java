@@ -24,4 +24,13 @@ public class UserDaoImpl implements UserDao {
     public int changePassword(String id, String newPassword, String oldPassword) {
         return baseDao.getJdbcTemplate().update("UPDATE user_info SET password=? WHERE id=? AND password=?", newPassword, id, oldPassword);
     }
+
+    public UserInfoVO getInfo(String id) {
+        return baseDao.getJdbcTemplate().queryForObject("SELECT user_name, nick_name FROM user_info WHERE id = ?",
+                new BeanPropertyRowMapper<UserInfoVO>(UserInfoVO.class), id);
+    }
+
+    public int editInfo(String id, UserInfoVO user) {
+        return baseDao.getJdbcTemplate().update("UPDATE user_info SET nick_name=? WHERE id=?", user.getNickName(), id);
+    }
 }

@@ -17,18 +17,16 @@
     <div class="form row">
         <form class="form-horizontal col-sm-offset-3 col-md-offset-3" id="login_form" method="post"
               action="/login">
-            <h3 class="form-title">私人系统请登陆</h3>
+            <h3 class="form-title">登陆</h3>
 
             <div class="col-sm-9 col-md-9">
                 <div class="form-group">
                     <i class="fa fa-user fa-lg"></i>
-                    <input class="form-control required" type="text" placeholder="用户名" name="userName"
-                           autofocus="autofocus" maxlength="20"/>
+                    <input class="form-control required" type="text" placeholder="用户名" name="userName" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
                     <i class="fa fa-lock fa-lg"></i>
-                    <input class="form-control required" type="password" placeholder="密码" name="password"
-                           maxlength="8"/>
+                    <input class="form-control required" type="password" placeholder="密码" name="password"/>
                 </div>
                 <%--<div class="form-group">--%>
                 <%--<label class="checkbox">--%>

@@ -11,4 +11,8 @@ public interface UserDao {
     public UserInfoVO getOnUseUserInfo(String userName);
 
     public int changePassword(String id, String newPassword, String oldPassword);
+
+    public UserInfoVO getInfo(String id);
+
+    public int editInfo(String id, UserInfoVO user);
 }

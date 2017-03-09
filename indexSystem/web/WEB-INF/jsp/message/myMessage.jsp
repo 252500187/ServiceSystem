@@ -14,13 +14,8 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/jsp/common/head.jsp" %>
-<div class="row" id="pageContent">
-    <div class="col-md-9" id="msaList">
-    </div>
-    <div class="col-md-3">
-        <%@ include file="/WEB-INF/jsp/common/nav.jsp" %>
-    </div>
-</div>
+<div class="row" id="msaList"></div>
+<%@ include file="/WEB-INF/jsp/common/foot.jsp" %>
 </body>
 </html>
 <script type="text/javascript" src="/static/js/myMsa.js">

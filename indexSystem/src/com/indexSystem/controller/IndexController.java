@@ -2,10 +2,12 @@ package com.indexSystem.controller;
 
 import com.indexSystem.service.UserService;
 import com.indexSystem.system.Dict.Dict;
+import com.indexSystem.vo.UserInfoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -43,6 +45,21 @@ public class IndexController {
         session.removeAttribute(Dict.SESSION_USERNAME);
         session.removeAttribute(Dict.SESSION_USER_ID);
         return "security/login";
+    }
+
+    @RequestMapping(value = "/toInfo", method = RequestMethod.GET)
+    public String toInfo(HttpSession session, HttpServletRequest request) {
+        userService.getSelfInfo(session.getAttribute(Dict.SESSION_USER_ID).toString(), request);
+        return "security/info";
+    }
+
+    @RequestMapping(value = "/editInfo", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean editInfo(HttpSession session, @RequestBody UserInfoVO user) {
+        if (userService.editInfo(session.getAttribute(Dict.SESSION_USER_ID).toString(), user)) {
+            return true;
+        }
+        return false;
     }
 
     @RequestMapping(value = "/toChanPass", method = RequestMethod.GET)
