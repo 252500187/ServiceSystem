@@ -14,7 +14,7 @@
 <body>
 <%@ include file="/WEB-INF/jsp/common/head.jsp" %>
 <div class="row">
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-6 col-md-offset-1">
         <div class="form-horizontal">
             <div class="form-group">
                 <label for="oldPass" class="col-sm-6 control-label">旧密码</label>

@@ -21,11 +21,11 @@
 
             <div class="col-sm-9 col-md-9">
                 <div class="form-group">
-                    <i class="fa fa-user fa-lg"></i>
+                    <i class="fa icon-user"></i>
                     <input class="form-control required" type="text" placeholder="用户名" name="userName" autofocus="autofocus"/>
                 </div>
                 <div class="form-group">
-                    <i class="fa fa-lock fa-lg"></i>
+                    <i class="fa icon-lock"></i>
                     <input class="form-control required" type="password" placeholder="密码" name="password"/>
                 </div>
                 <%--<div class="form-group">--%>

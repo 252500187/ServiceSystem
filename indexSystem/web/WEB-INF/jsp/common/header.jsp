@@ -7,8 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <meta charset="utf-8"/>
-<%--<link rel="shortcut icon" href="">--%>
+<link rel="shortcut icon" href="/static/img/background.jpg">
 <script src="/static/js/jquery-1.9.1.min.js"></script>
 <script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/fontA/css/font-awesome.min.css" rel="stylesheet">
 <link href="/static/css/index.css" rel="stylesheet">
