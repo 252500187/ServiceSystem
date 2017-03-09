@@ -13,16 +13,16 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="bs-example" data-example-id="simple-nav-stacked">
+                    <div class="bs-example">
                         <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-                            <li role="presentation" id="index"><a href="/"><i class="icon-asterisk"></i> 首页</a></li>
-                            <li role="presentation" id="myMsa"><a href="/msa/toMyMsa"><i class="icon-asterisk"></i> 我的留言</a>
+                            <li id="index"><a href="/"><i class="icon-asterisk"></i> 首页</a></li>
+                            <li id="myMsa"><a href="/msa/toMyMsa"><i class="icon-asterisk"></i> 我的留言</a>
                             </li>
-                            <li role="presentation" id="info"><a href="/toInfo"><i class="icon-asterisk"></i> 个人信息</a>
+                            <li id="info"><a href="/toInfo"><i class="icon-asterisk"></i> 个人信息</a>
                             </li>
-                            <li role="presentation" id="change"><a href="/toChanPass"><i class="icon-asterisk"></i> 修改密码</a>
+                            <li id="change"><a href="/toChanPass"><i class="icon-asterisk"></i> 修改密码</a>
                             </li>
-                            <li role="presentation"><a href="/logout"><i class="icon-asterisk"></i> 退出</a></li>
+                            <li><a href="/logout"><i class="icon-asterisk"></i> 退出</a></li>
                         </ul>
                     </div>
                 </div>
@@ -31,6 +31,11 @@
     </div>
 </div>
 </div>
+<footer class="footer">
+    <div class="container text-center">
+        <small class="copyright">Thanks For Visit</small>
+    </div>
+</footer>
 <script type="text/javascript">
     if (document.location.pathname == "/msa/toMyMsa") {
         $("#myMsa").attr("class", "active");

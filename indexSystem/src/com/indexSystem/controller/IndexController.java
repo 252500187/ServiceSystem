@@ -28,11 +28,9 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password) {
-        if (userService.isLogin(session, userName, password)) {
-            return "index";
-        }
-        return "security/login";
+    @ResponseBody
+    public boolean login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password) {
+        return userService.isLogin(session, userName, password);
     }
 
     @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
