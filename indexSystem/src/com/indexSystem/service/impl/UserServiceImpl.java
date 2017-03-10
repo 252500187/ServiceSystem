@@ -31,6 +31,22 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    public boolean register(UserInfoVO user) {
+        if (StringUtils.isBlank(user.getUserName()) || StringUtils.isBlank(user.getPassword())) {
+            return false;
+        }
+        if (StringUtils.isBlank(user.getNickName())) {
+            user.setNickName(null);
+        }
+        user.setPassword(Utils.getMD5(user.getPassword()));
+        try {
+            userDao.addUser(user);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
     public boolean changePassword(String id, String newPassword, String oldPassword) {
         try {
             if (userDao.changePassword(id, newPassword, oldPassword) > 0) {

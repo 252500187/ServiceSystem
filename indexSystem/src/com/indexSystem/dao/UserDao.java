@@ -10,6 +10,8 @@ public interface UserDao {
 
     public UserInfoVO getOnUseUserInfo(String userName);
 
+    public void addUser(UserInfoVO user);
+
     public int changePassword(String id, String newPassword, String oldPassword);
 
     public UserInfoVO getInfo(String id);

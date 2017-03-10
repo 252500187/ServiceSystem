@@ -63,20 +63,22 @@ $("#regist").click(function () {
         return;
     }
     $.ajax({
-        url: "/login",
+        url: "/register",
         type: "post",
         contentType: "application/json",
-        dataType: "json",
         data: JSON.stringify({
             userName: userName.val(),
-            rnickName: $("#rnickName").val(),
-            password: password.cal()
+            password: password.val(),
+            nickName: $("#rnickName").val()
         }),
         success: function (result) {
             if (result) {
-                window.location.href = "";
+                $("#register_form").css("display", "none");
+                $("#login_form").css("display", "block");
+                $("#registSuccess").css("display", "block");
             } else {
-                password.next().next().css("display", "block");
+                userName.parent().addClass("has-error");
+                userName.next().next().css("display", "block");
             }
         }
     })

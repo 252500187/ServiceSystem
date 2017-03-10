@@ -27,6 +27,12 @@ public class IndexController {
         return "security/login";
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean register(@RequestBody UserInfoVO user) {
+        return userService.register(user);
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public boolean login(HttpSession session, @RequestParam("userName") String userName, @RequestParam("password") String password) {

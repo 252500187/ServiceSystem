@@ -19,6 +19,9 @@
             <h3 class="form-title">欢迎..</h3>
 
             <div class="col-sm-9 col-md-9">
+                <div class="alert alert-success" id="registSuccess" style="display: none">
+                    <strong>欢迎加入，注册成功！</strong>
+                </div>
                 <div class="form-group">
                     <i class="fa icon-user"></i>
                     <input class="form-control required" type="text" placeholder="用户名" id="userName"
@@ -48,13 +51,14 @@
             <div class="col-sm-9 col-md-9">
                 <div class="form-group">
                     <i class="fa icon-user"></i>
-                    <input class="form-control required" type="text" placeholder="登陆名称" id="ruserName"
+                    <input class="form-control required" type="text" placeholder="用户名称" id="ruserName"
                            autofocus="autofocus"/>
                     <span class="help-block">请填写登陆名称</span>
+                    <span class="help-block">该名称已被注册</span>
                 </div>
                 <div class="form-group">
                     <i class="fa icon-magnet"></i>
-                    <input class="form-control required" type="text" placeholder="用户昵称" id="rnickName"/>
+                    <input class="form-control required" type="text" placeholder="用户昵称（选填）" id="rnickName"/>
                 </div>
                 <div class="form-group">
                     <i class="fa icon-lock"></i>

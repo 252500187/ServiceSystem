@@ -12,6 +12,8 @@ public interface UserService {
 
     public boolean isLogin(HttpSession session, String userName, String password);
 
+    public boolean register(UserInfoVO user);
+
     public boolean changePassword(String id, String newPassword, String oldPassword);
 
     public void getSelfInfo(String id, HttpServletRequest request);

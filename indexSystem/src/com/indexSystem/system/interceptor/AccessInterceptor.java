@@ -20,7 +20,7 @@ public class AccessInterceptor implements HandlerInterceptor {
     UserService loginService;
 
     private boolean isAuthorized(String uri, HttpSession session) {
-        if ("toLogin".equals(uri) || "login".equals(uri)) {
+        if ("toLogin".equals(uri) || "login".equals(uri) || "register".equals(uri)) {
             return true;
         }
         if (StringUtils.isEmpty(session.getAttribute(Dict.SESSION_USER_ID))) {
