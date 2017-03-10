@@ -33,7 +33,7 @@ $("#login").click(function () {
         },
         success: function (result) {
             if (result) {
-                window.location.href = "";
+                window.location.href = "/";
             } else {
                 password.parent().addClass("has-error");
                 password.next().next().css("display", "block");
