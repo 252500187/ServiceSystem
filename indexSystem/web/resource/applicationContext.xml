@@ -47,7 +47,7 @@
         <property name="localOverride" value="true"></property>
         <property name="locations">
             <list>
-                <value>/WEB-INF/properties/system.properties</value>
+                <value>classpath:properties/system.properties</value>
             </list>
         </property>
     </bean>
