@@ -2,7 +2,6 @@ package com.MessageSystem.dao;
 
 import com.MessageSystem.vo.MessageVO;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
